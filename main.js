@@ -13,33 +13,24 @@ const validate = async (event) => {
 
 const updateWithMultiply = async (event) => {
   document.querySelector('#result').innerHTML = ''
-  if (document.querySelector('#firstNumber').checkValidity() && document.querySelector('#secondNumber').checkValidity() && document.querySelector('#thirdNumber').checkValidity()) {
+  if (document.querySelector('#Length').checkValidity() && document.querySelector('#Breadth').checkValidity() && document.querySelector('#Height').checkValidity()) {
     const regex = /[^a-zA-Z_]/g
     const s = document.querySelector('#guest').value.replace(regex, '')
-    const i = parseInt(document.querySelector('#firstNumber').value)
-    const j = parseInt(document.querySelector('#secondNumber').value)
-    const k = parseInt(document.querySelector('#thirdNumber').value)
+    const i = parseInt(document.querySelector('#Length').value)
+    const j = parseInt(document.querySelector('#Breadth').value)
+    const k = parseInt(document.querySelector('#Height').value)
     const ans = `${s}, your product is ${multiply(i, j, k)}.`
     document.querySelector('#result').innerHTML = ans
   }
-}
-
-const updateWithJoke = async (event) => {
-  document.querySelector('#result').innerHTML = ''
-  const url = 'https://api.icndb.com/jokes/random?limitTo=[nerdy]'
-  const response = await fetch(url)
-  const obj = await response.json()
-  const joke = obj.value.joke || 'No joke for you.'
-  document.querySelector('#result').innerHTML = joke
 }
 
 // delegate to dynamic elements (e.g. when testing)
 // focusout is like blur, but it bubbles up
 
 document.addEventListener('focusout', event => {
-  if ((event.target && event.target.id === 'firstNumber') ||
-    (event.target && event.target.id === 'secondNumber')
-    (event.target && event.target.id === 'thirdNumber')) {
+  if ((event.target && event.target.id === 'Length') ||
+    (event.target && event.target.id === 'Breadth')
+    (event.target && event.target.id === 'Height')) {
     validate(event)
   }
 })
@@ -48,6 +39,4 @@ document.addEventListener('click', event => {
   if (event.target && event.target.id === 'multiplyButton') { updateWithMultiply(event) }
 })
 
-document.addEventListener('click', event => {
-  if (event.target && event.target.id === 'getJokeButton') { updateWithJoke(event) }
-})
+
