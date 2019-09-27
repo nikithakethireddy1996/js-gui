@@ -1,4 +1,4 @@
-const multiply = (x, y,z) => { return x * y * z}
+const multiply = (x, y, z) => { return x * y * z}
 
 const validate = async (event) => {
   console.log(`triggered validate on ${event.target.id}`)
@@ -13,7 +13,7 @@ const validate = async (event) => {
 
 const updateWithAdd = async (event) => {
   document.querySelector('#result').innerHTML = ''
-  if (document.querySelector('#firstNumber').checkValidity() && document.querySelector('#secondNumber').checkValidity()) {
+  if (document.querySelector('#firstNumber').checkValidity() && document.querySelector('#secondNumber').checkValidity() && document.querySelector('#thirdNumber').checkValidity()) {
     const regex = /[^a-zA-Z_]/g
     const s = document.querySelector('#guest').value.replace(regex, '')
     const i = parseInt(document.querySelector('#firstNumber').value)
