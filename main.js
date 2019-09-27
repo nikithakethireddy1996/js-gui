@@ -18,7 +18,8 @@ const updateWithAdd = async (event) => {
     const s = document.querySelector('#guest').value.replace(regex, '')
     const i = parseInt(document.querySelector('#firstNumber').value)
     const j = parseInt(document.querySelector('#secondNumber').value)
-    const ans = `${s}, your sum is ${add(i, j)}.`
+    const k = parseInt(document.querySelector('#thirdNumber').value)
+    const ans = `${s}, your product is ${multiply(i, j, k)}.`
     document.querySelector('#result').innerHTML = ans
   }
 }
@@ -44,7 +45,7 @@ document.addEventListener('focusout', event => {
 })
 
 document.addEventListener('click', event => {
-  if (event.target && event.target.id === 'addButton') { updateWithAdd(event) }
+  if (event.target && event.target.id === 'multiplyButton') { updateWithAdd(event) }
 })
 
 document.addEventListener('click', event => {
