@@ -11,7 +11,7 @@ const validate = async (event) => {
   }
 }
 
-const updateWithAdd = async (event) => {
+const updateWithMultiply = async (event) => {
   document.querySelector('#result').innerHTML = ''
   if (document.querySelector('#firstNumber').checkValidity() && document.querySelector('#secondNumber').checkValidity() && document.querySelector('#thirdNumber').checkValidity()) {
     const regex = /[^a-zA-Z_]/g
@@ -45,7 +45,7 @@ document.addEventListener('focusout', event => {
 })
 
 document.addEventListener('click', event => {
-  if (event.target && event.target.id === 'multiplyButton') { updateWithAdd(event) }
+  if (event.target && event.target.id === 'multiplyButton') { updateWithMultiply(event) }
 })
 
 document.addEventListener('click', event => {
