@@ -23,8 +23,7 @@ const updateWithMultiply = async (event) => {
   }
 }
 
-// delegate to dynamic elements (e.g. when testing)
-// focusout is like blur, but it bubbles up
+
 
 document.addEventListener('focusout', event => {
   if ((event.target && event.target.id === 'studentsPerCourse') ||
