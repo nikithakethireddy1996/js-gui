@@ -29,7 +29,7 @@ const updateWithMultiply = async (event) => {
 
 document.addEventListener('focusout', event => {
   if ((event.target && event.target.id === 'studentsPerCourse') ||
-    (event.target && event.target.id === 'BcoursesPerTerm')
+    (event.target && event.target.id === 'coursesPerTerm')
     (event.target && event.target.id === 'countOfTerms')) {
     validate(event)
   }
