@@ -14,11 +14,11 @@ const validate = async (event) => {
 const updateWithMultiply = async (event) => {
   document.querySelector('#result').innerHTML = ''
   if (document.querySelector('#studentsPerCourse').checkValidity() && document.querySelector('#coursesPerTerm').checkValidity() && document.querySelector('#countOfTerms').checkValidity()) {
-    const regex = /[^a-zA-Z_]/g
+    
     const i = parseInt(document.querySelector('#studentsPerCourse').value)
     const j = parseInt(document.querySelector('#coursesPerTerm').value)
     const k = parseInt(document.querySelector('#countOfTerms').value)
-    const ans = `${s}, your product is ${multiply(i, j, k)}.`
+    const ans = ` your product is ${multiply(i, j, k)}.`
     document.querySelector('#result').innerHTML = ans
   }
 }
